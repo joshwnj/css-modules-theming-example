@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { themr } from 'react-css-themr';
+import styles from "./styles/body.css";
 
 function Body(props) {
   return (
-    <div className={cn(props.theme.body, props.className)}>
+    <div className={cn(styles.body, props.className)}>
       {props.children}
     </div>
   );
@@ -24,4 +24,4 @@ if (__DEV__) {
   };
 }
 
-export default themr('body')(Body);
+export default Body;

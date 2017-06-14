@@ -4,3 +4,7 @@
   padding: 40px;
   flex: 1;
 }
+
+:global(.theme-dark) .body {
+  background-color: rgba(36,52,68,1)
+}

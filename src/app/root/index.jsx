@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import { ThemeProvider } from 'react-css-themr';
+
 import Page from '../../components/page';
 import Body from '../../components/page/body';
 import Button from '../../components/button';
@@ -27,12 +27,12 @@ class Root extends React.Component {
   render() {
     const { location } = this.props;
     const query = queryString.parse(location.search);
-    const theme = themes[query.theme || 'light'];
+    const theme = query.theme || 'light';
 
     return (
-      <ThemeProvider theme={theme}>
+      <div className={`theme-${theme}`}>
         {this.renderContent()}
-      </ThemeProvider>
+      </div>
     );
   }
 }
